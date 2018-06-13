@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #nba{
+            height: 100px;
+            width: 100px;
+        }
+        .stuff {
+            display: flex;
+            flex: 1;
+        }
+        #title1{
+            text-align: center;
+        }
+        .points{
+            background: slategray;
+            height: 70%;
+            width: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        #title2{
+            text-align: center;
+        }
+        .boards{
+             background: royalblue; 
+            flex: 1;
+            
+        }
+        #title3{
+            text-align: center;
+        }
+        .assist{
+             background: teal; 
+            flex: 1;
+        }
+    </style>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>  
+</head>
+<body>
+     <nav style="min-height:100px">
+    <div class="nav-wrapper blue darken-4">
+      <img id="nba" src="https://fadeawayworld.com/wp-content/uploads/2017/04/C85PWR0UIAAp8L_.jpg">
+      
+      <h1 id="stats" class="brand-logo">Statistics</h1>
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/about">About</a></li>
+      
+        
+      </ul>
+    </div>
+  </nav>
+  <main>
+      <div class="stuff">
+        <div class="points">
+            <h1 id="title1">Points</h1>
+            <ol>
+               <% data.forEach(function(player){ %>
+               <li><%= player.name %> - <%= player.points %></li>
+               <% }) %>
+            </ol>
+        </div>
+       <div class="boards">
+           <h2 id="title2">Boards</h2>
+
+           <ol>
+               <% rebounds.forEach(function(player){ %>
+                   <li><%= player.name %> - <%= player.rebounds %></li>
+              <% }) %>
+           </ol>
+           </div>
+       <div class="assist">
+           <h2 id="title3">Assist</h2>
+           <ol>
+               <% assists.forEach(function(player){ %>
+                   <li><%= player.name %> - <%= player.assists %></li>
+              <% }) %>  
+           </ol>
+       </div>
+  </main>
+
+</body>
